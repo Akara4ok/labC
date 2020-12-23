@@ -12,7 +12,7 @@ int main()
 	cin >> k;
 	cin.ignore();
 	getline(cin, s);
-	words = split(s);
-	cout << count(words, k);
+	split(s, words);
+	res(words, k);
 	return 0;
 }

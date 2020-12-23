@@ -1,12 +1,12 @@
 #include <vector>
+#include <iostream>
 #include <string>
 #include "myLib.h"
 
 using namespace std;
 
-vector<string> split(string s)
+void split(string s, vector<string>&words)
 {
-	vector<string> res;
 	int next, pos;
 	pos = 0;
 	next = 0;
@@ -14,13 +14,12 @@ vector<string> split(string s)
 	{
 		next = s.find(' ', pos);
 		if (next != pos)
-			res.push_back(s.substr(pos, next - pos));
+			words.push_back(s.substr(pos, next - pos));
 		pos = next + 1;
 	}
-	return res;
 }
 
-int count(vector<string> words, int k)
+void res(vector<string> words, int k)
 {
 	int res;
 	res = 0;
@@ -28,8 +27,7 @@ int count(vector<string> words, int k)
 	{
 		if (words[i].length() < k)
 		{
-			++res;
+			cout << words[i] << " ";
 		}
 	}
-	return res;
 }
